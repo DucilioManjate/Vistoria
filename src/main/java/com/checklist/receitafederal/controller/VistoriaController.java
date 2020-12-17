@@ -25,9 +25,10 @@ public class VistoriaController {
 		return ResponseEntity.ok(vistorias);
 	}
 
-
+	//Usar PostMapping ao inves de RequestMapping para Requisições POST
 	@PostMapping("/cadastrarVistoria")
-	public ResponseEntity<Vistoria> form2(Vistoria vistoria) {
+	//Colocar RequestBody na frente da variavel que servirá para armazenar o body da requisição
+	public ResponseEntity<Vistoria> form2(@RequestBody Vistoria vistoria) {
 		System.out.println(vistoria.getData());
 		repository.save(vistoria);
 		return ResponseEntity.ok(vistoria);
