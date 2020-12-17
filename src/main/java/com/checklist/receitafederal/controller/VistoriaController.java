@@ -20,6 +20,7 @@ public class VistoriaController {
 	}
 
 	@GetMapping("/vistoria")
+	//Retornar ResponseEntity com as entidades desejadas para a conversão para JSON ser automatica
 	public ResponseEntity<Iterable<Vistoria>> form() {
 		Iterable<Vistoria> vistorias = repository.findAll();
 		return ResponseEntity.ok(vistorias);
@@ -29,10 +30,8 @@ public class VistoriaController {
 	@PostMapping("/cadastrarVistoria")
 	//Colocar RequestBody na frente da variavel que servirá para armazenar o body da requisição
 	public ResponseEntity<Vistoria> form2(@RequestBody Vistoria vistoria) {
-		System.out.println(vistoria.getData());
 		repository.save(vistoria);
 		return ResponseEntity.ok(vistoria);
-		
 	}
 
 

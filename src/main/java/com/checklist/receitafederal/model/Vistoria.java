@@ -21,7 +21,7 @@ public class Vistoria implements Serializable{
 	private LocalDate data;
 
 	private LocalTime horario;
-
+	//Colocar construtor com todos argumentos e um sem nenhum argumento para Entidade funcionar
 	public Vistoria(Long codigo, String veiculo, String local, LocalDate data, LocalTime horario) {
 		this.codigo = codigo;
 		this.veiculo = veiculo;
