@@ -1,28 +1,28 @@
 package com.checklist.receitafederal.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Vistoria implements Serializable{
 	
-	private static final long serialVersionUID =1L;
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long codigo;
-	
-	
+
 	private String Veiculo;
+
 	private String local;
-	private String data;
-	private String Horario;
-	
-	
+
+	private LocalDate data;
+
+	private LocalTime Horario;
+
+
 	public long getCodigo() {
 		return codigo;
 	}
@@ -34,29 +34,32 @@ public class Vistoria implements Serializable{
 	public String getVeiculo() {
 		return Veiculo;
 	}
-	
+
 	public void setVeiculo(String veiculo) {
 		Veiculo = veiculo;
 	}
+
 	public String getLocal() {
 		return local;
 	}
+
 	public void setLocal(String local) {
 		this.local = local;
 	}
-	public String getData() {
+
+	public LocalDate getData() {
 		return data;
 	}
-	public void setData(String data) {
+
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
-	public String getHorario() {
+
+	public LocalTime getHorario() {
 		return Horario;
 	}
-	public void setHorario(String horario) {
+
+	public void setHorario(LocalTime horario) {
 		Horario = horario;
 	}
-	
-	
-
 }

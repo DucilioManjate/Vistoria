@@ -12,7 +12,7 @@
 	<artifactId>sistema</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sistema</name>
-	<description>Projecto integrador III Uni América - Engenharia de software</description>
+	<description>Projeto integrador III Uni América - Engenharia de software</description>
 
 	<properties>
 		<java.version>11</java.version>
