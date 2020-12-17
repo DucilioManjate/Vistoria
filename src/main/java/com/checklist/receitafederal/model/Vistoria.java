@@ -9,10 +9,10 @@ import javax.persistence.*;
 
 @Entity
 public class Vistoria implements Serializable{
-	
+	//Evitar usar tipos primitivos, usar WrapperClasses
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long codigo;
+	private Long codigo;
 
 	private String Veiculo;
 
@@ -22,6 +22,13 @@ public class Vistoria implements Serializable{
 
 	private LocalTime Horario;
 
+	public Vistoria(Long codigo, String veiculo, String local, LocalDate data, LocalTime horario) {
+		this.codigo = codigo;
+		Veiculo = veiculo;
+		this.local = local;
+		this.data = data;
+		Horario = horario;
+	}
 
 	public long getCodigo() {
 		return codigo;

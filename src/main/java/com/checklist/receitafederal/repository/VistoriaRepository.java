@@ -4,6 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.checklist.receitafederal.model.Vistoria;
 
-public interface VistoriaRepository  extends CrudRepository<Vistoria, String>{
+//Usar Long no segundo generic já que seu código identificador é desse tipo
+public interface VistoriaRepository extends CrudRepository<Vistoria, Long>{
 
 }

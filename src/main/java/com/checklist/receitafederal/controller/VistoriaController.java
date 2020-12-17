@@ -1,28 +1,32 @@
 package com.checklist.receitafederal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 
 import com.checklist.receitafederal.model.Vistoria;
 import com.checklist.receitafederal.repository.VistoriaRepository;
 
-@Controller
+@RestController
 public class VistoriaController {
-	
+
+	//Usar injeção de dependencia (Autowired) em construtores, evite usar direto na declaração
+	private final VistoriaRepository repository;
+
 	@Autowired
-	private VistoriaRepository er;
-	
-	@RequestMapping(value="/cadastrarVistoria", method=RequestMethod.GET)
+	public VistoriaController(VistoriaRepository er) {
+		this.repository = er;
+	}
+
+	@GetMapping("/cadastrarVistoria")
 	public String form() {
 		return "vistoria/formVistoria";
 	}
-	@RequestMapping(value="/cadastrarVistoria", method=RequestMethod.POST)
-	public String form(Vistoria vistoria) {
-		er.save(vistoria);
-		
+
+
+	@PostMapping("/cadastrarVistoria")
+	public String form2(Vistoria vistoria) {
+		repository.save(vistoria);
 		return "redirect:/cadastrarVistoria";
 		
 	}
