@@ -1,6 +1,7 @@
 package com.checklist.receitafederal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -18,16 +19,18 @@ public class VistoriaController {
 		this.repository = er;
 	}
 
-	@GetMapping("/cadastrarVistoria")
-	public String form() {
-		return "vistoria/formVistoria";
+	@GetMapping("/vistoria")
+	public ResponseEntity<Iterable<Vistoria>> form() {
+		Iterable<Vistoria> vistorias = repository.findAll();
+		return ResponseEntity.ok(vistorias);
 	}
 
 
 	@PostMapping("/cadastrarVistoria")
-	public String form2(Vistoria vistoria) {
+	public ResponseEntity<Vistoria> form2(Vistoria vistoria) {
+		System.out.println(vistoria.getData());
 		repository.save(vistoria);
-		return "redirect:/cadastrarVistoria";
+		return ResponseEntity.ok(vistoria);
 		
 	}
 

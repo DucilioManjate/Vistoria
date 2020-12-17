@@ -14,36 +14,39 @@ public class Vistoria implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long codigo;
 
-	private String Veiculo;
+	private String veiculo;
 
 	private String local;
 
 	private LocalDate data;
 
-	private LocalTime Horario;
+	private LocalTime horario;
 
 	public Vistoria(Long codigo, String veiculo, String local, LocalDate data, LocalTime horario) {
 		this.codigo = codigo;
-		Veiculo = veiculo;
+		this.veiculo = veiculo;
 		this.local = local;
 		this.data = data;
-		Horario = horario;
+		this.horario = horario;
 	}
 
-	public long getCodigo() {
+	public Vistoria() {
+	}
+
+	public Long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 
 	public String getVeiculo() {
-		return Veiculo;
+		return veiculo;
 	}
 
 	public void setVeiculo(String veiculo) {
-		Veiculo = veiculo;
+		this.veiculo = veiculo;
 	}
 
 	public String getLocal() {
@@ -63,10 +66,10 @@ public class Vistoria implements Serializable{
 	}
 
 	public LocalTime getHorario() {
-		return Horario;
+		return horario;
 	}
 
 	public void setHorario(LocalTime horario) {
-		Horario = horario;
+		this.horario = horario;
 	}
 }
